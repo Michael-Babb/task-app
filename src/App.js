@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import TaskList from './task-list/task-list';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const taskData = useSelector(state => state.taskData.value)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="navBar">
+          <h1>Task App</h1>
+        </div>
+      <TaskList listOfTasks={taskData}/>
+
     </div>
+    
   );
 }
-
 export default App;

@@ -1,0 +1,63 @@
+.taskForm form {
+    width : 100%;
+}
+
+.taskForm button, .sortOptions button{
+    padding-top: 5px;
+    padding-bottom : 5px;
+    margin-bottom : 4px;
+}
+.taskForm button {
+    width : 150px;
+    margin-left: 120px;
+    margin-top : 10px;
+
+}
+
+.taskForm div {
+    width : 300px;
+    display : block;
+    color : #FFFFFF; 
+    margin : auto;
+    margin-bottom : 15px;
+}
+
+@media (max-width : 617px){
+    .taskForm button {
+        margin-top : 10px;
+    }
+}
+
+
+.inputHolder { 
+    display : inline-block;
+    margin-right: 30px;
+}
+
+
+
+.sortOptions {
+    width : 100%;
+    height : 50px;
+    background-color : #dbe9ff;
+    margin-top : 10px;
+    padding-top : 10px;
+    background-color : #292929;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sortOptions button {
+    margin-left : 10px;
+    margin-top : 5px;
+}
+
+button {
+    background-color : #C2C2C2;
+    border-radius : 10px;
+    border : solid 2px  
+}
+
+button:hover{
+    background-color : #A3A3A3;
+}

@@ -1,0 +1,39 @@
+#timerContainer{
+    background-color : #EFF6FB;
+    border-radius : 10px;
+    width : 375px;
+    margin-left: 25px;
+    display : inline-block;
+    height : auto;
+}
+
+#timerContainer h1 {
+    text-align: center;
+}
+
+#timerContainer #time {
+    text-align: center;
+}
+
+#timerButtons{
+    height : 40px;
+    background-color : #dbe9ff;
+    margin-top : 10px;
+    padding : 10px;
+    padding-bottom : 10px;
+    background-color : #292929;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display : flex;
+}
+
+
+#timerButtons button {
+    margin : 5px;
+    flex : 1;
+}
+
+#timer{
+    font-size : 4em;
+    text-align : center;
+}

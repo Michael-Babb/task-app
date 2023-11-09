@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(45,117,167);
+background: -moz-radial-gradient(circle, rgba(45,117,167,1) 25%, 75%, rgba(18,18,18,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(45,117,167,1) 25%, 75%, rgba(18,18,18,1) 100%);
+background: radial-gradient(circle, rgba(45,117,167,1) 25%, 75%, rgba(18,18,18,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d75a7",endColorstr="#121212",GradientType=1);
 }
 
 code {
