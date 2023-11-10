@@ -2,41 +2,44 @@
     width : 90%;
     max-width : 800px;
     margin : auto;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius : 10px;
+    border-top-left-radius : 10px;
 }
 
 #taskHeader {
     background-color : #EFF6FB;
     border-radius : 10px;
     width : 400px;
-    margin-left: auto;
+    margin-left : auto;
     display : inline-block;
 }
 
 #taskOptions {
     width : 80%;
-    max-width: 800px;
+    max-width : 800px;
     margin : auto;
     margin-top : 50px;
 }
 
-
 #taskHeader h1{
     width : 100%;
-    text-align: center;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    text-align : center;
+    border-top-right-radius : 10px;
+    border-top-left-radius : 10px;
+    padding-top : 10px;
 }
+
 #taskContainer form, #taskContainer h3 {
     color : #121212;
 }
+
 .tasks {
     list-style : none;
     text-align : left;
     padding-left : 0;
-    margin-top: 0;
+    margin-top : 0;
 }
+
 .tasks li .container{
     padding-left : 10px;
 }

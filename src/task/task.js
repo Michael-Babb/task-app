@@ -7,24 +7,17 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import EditIcon from '@mui/icons-material/Edit';
 import SaveIcon from '@mui/icons-material/Save';
-
+import TextField from '@mui/material/TextField';
 
 import { deleteTask, toggleStatus, makeEditable, updateTaskTitle, updateTaskDescription } from '../taskSlice';
 import './task.css';
 
-
 function Task({index}){
-    const dispatch = useDispatch()
-    const individualTaskData = useSelector(state => state.taskData.value)
+    const dispatch = useDispatch();
+    const individualTaskData = useSelector(state => state.taskData.value);
     let titleHolder = "";
     let descriptionHolder = "";
     let statusIcon = "";
-
-    if(individualTaskData[index].status){
-        statusIcon = <AutorenewIcon />
-    } else {
-        statusIcon = <TaskAltIcon />;
-    }
 
     const handleTitleChange = (e) => {
         titleHolder = e.target.value;
@@ -34,34 +27,54 @@ function Task({index}){
        descriptionHolder = e.target.value;
     }
 
+    if(individualTaskData[index].status){
+        statusIcon = <AutorenewIcon />;
+    } else {
+        statusIcon = <TaskAltIcon />;
+    }
+   
     return (
         <li key={index} className={`individualTask ${individualTaskData[index].status ? "completeTask" : "pendingTask"}`}>
             <div class="container">
                 <p className="taskTitle">{individualTaskData[index].title}</p>
-                <span className="taskDescription">Description: {individualTaskData[index].description}</span>
-                <span className='taskCreationDate'>Creation Date: {individualTaskData[index].creationDate}</span>
-                <span className='taskStatus'>Status: {`${individualTaskData[index].status ? "Complete" : "Pending"}`}</span>
+                <p className="taskDescription"><b>Description:</b> {individualTaskData[index].description}</p>
+                <p className='taskCreationDate'><b>Creation Date:</b> {individualTaskData[index].creationDate}</p>
+                <p className='taskStatus'><b>Status:</b> {`${individualTaskData[index].status ? "Complete" : "Pending"}`}</p>
                 <div className={`updateTaskData ${individualTaskData[index].makeEditable ? "editTask" : "pendingTask"}`}>
                     <div className='updateTaskTitle'>
-                        <label>
-                            Update Title
-                        </label>    
-                        <input type="text" onChange={handleTitleChange}></input>  
-                        <Button variant="contained" onClick={() => dispatch(updateTaskTitle([titleHolder,index]))}><SaveIcon /></Button>
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="updateTaskName"
+                            label="New Title"
+                            name="updateTaskName"
+                            autoComplete="updateTaskName"
+                            autoFocus
+                            onChange={handleTitleChange}
+                        />
+                        <Button variant="contained" alt="Save Title" onClick={() => dispatch(updateTaskTitle([titleHolder,index]))}><SaveIcon /></Button>
                     </div>
                     <div className='updateTaskDescription'>
-                        <label>
-                            Update Description
-                        </label>   
-                        <input type="text" onChange={handleDescriptionChange}></input>
-                        <Button variant="contained" onClick={() => dispatch(updateTaskDescription([descriptionHolder,index]))}><SaveIcon /></Button>
+                        <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="updateTaskDescription"
+                                label="New Description"
+                                name="updateTaskDescription"
+                                autoComplete="updateTaskDescription"
+                                autoFocus
+                                onChange={handleDescriptionChange}
+                            />
+                        <Button variant="contained" alt="Save Description" onClick={() => dispatch(updateTaskDescription([descriptionHolder,index]))}><SaveIcon /></Button>
                     </div>
                 </div>
             </div>
             <div class="taskButtons">
-                <Button variant="contained" onClick={() => dispatch(makeEditable(index))}>{<EditIcon />}</Button>
-                <Button variant="contained" onClick={() => dispatch(toggleStatus(index))}>{statusIcon}</Button>
-                <Button variant="contained" onClick={() => dispatch(deleteTask(index))}>{<DeleteIcon />}</Button>
+                <Button variant="contained" alt="Edit Task" onClick={() => dispatch(makeEditable(index))}>{<EditIcon />}</Button>
+                <Button variant="contained" alt="Toggle Status" onClick={() => dispatch(toggleStatus(index))}>{statusIcon}</Button>
+                <Button variant="contained" alt="Delete Task" onClick={() => dispatch(deleteTask(index))}>{<DeleteIcon />}</Button>
             </div>
         </li>
     );

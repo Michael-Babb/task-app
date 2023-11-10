@@ -1,14 +1,11 @@
 import React from 'react';
 
-import "./task-list.css";
 import Task from "../task/task";
 import TaskForm from "../taskForm/taskForm";
 import Timer from '../timer/timer';
-
-
+import "./task-list.css";
 
 function TaskList({listOfTasks}){
-
     return (
         <>
             <div id="taskOptions">

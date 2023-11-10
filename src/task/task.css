@@ -2,52 +2,52 @@
     display : block;
     padding-top : 10px;
     border-radius : 10px;
-    margin-top: 25px;
+    margin-top : 25px;
 }
 
-
-.individualTask label {
-    display: block;
-}
 .individualTask button {
-    max-width: 150px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin: 5px;
-    width: 20%;
+    max-width : 150px;
+    padding-top : 5px;
+    padding-bottom : 5px;
+    margin : 5px;
 }
 
-.updateTaskTitle label,.updateTaskDescription label{
-    display: inline;
-    margin-right :10px;
+.updateTaskTitle, .updateTaskDescription {
+    width : 300px;
+    display : flex;
+}
+
+.taskButtons button{
+    width : 20%;
 }
 
 .taskTitle {
     display : block;
-    font-size: 1.3em;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    border-bottom : 1px solid #000000;
+    width : 300px;
+    font-size : 1.5em;
+    font-weight : 600;
+    margin-top : 5px;
+    margin-bottom : 5px;
     
 }
-.taskDescription {
-    display: block;
-}
-.taskCreationDate {
-    display: block;
-}
-.taskStatus {
-    display : block
+
+.taskDescription, .taskCreationDate, .taskStatus {
+    display : block;
 }
 
 .pendingTask {
     background-color : #5EA5D4;
 }
+
 .completeTask {
-    background-color: #0D2230;
+    background-color : #0D2230;
     color : #FFFFFF;
 }
 
-
+.completeTask .taskTitle {
+    border-bottom : 1px solid #FFFFFF;
+}
 
 .taskButtons {
     width : 100%;
@@ -56,8 +56,8 @@
     margin-top : 10px;
     padding-top : 10px;
     background-color : #0D2230;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius : 10px;
+    border-bottom-right-radius : 10px;
 }
 
 .taskButtons button {
@@ -66,12 +66,16 @@
     float : right;
 }
 
+.updateTaskData button {
+    height : fit-content;
+    margin : auto 10px;
+}
 
 .updateTaskData {
     display : none;
 }
 
-
 .editTask {
     display : block;
+    
 }

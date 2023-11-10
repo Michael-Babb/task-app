@@ -1,7 +1,8 @@
+import { useSelector } from 'react-redux';
+
+import TaskList from './task-list/task-list';
 
 import './App.css';
-import TaskList from './task-list/task-list';
-import { useSelector } from 'react-redux';
 
 function App() {
   const taskData = useSelector(state => state.taskData.value)
@@ -10,11 +11,10 @@ function App() {
     <div className="App">
       <div className="navBar">
           <h1>Task App</h1>
-        </div>
+      </div>
       <TaskList listOfTasks={taskData}/>
-
     </div>
-    
   );
 }
+
 export default App;
