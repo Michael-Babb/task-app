@@ -8,17 +8,17 @@ import TextField from '@mui/material/TextField';
 import { addTask, sortTasksByCreationDate, sortTasksByStatus } from '../taskSlice';
 import './taskForm.css'
 
+function getDate() {
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const date = today.getDate();
+
+    return `${month}/${date}/${year}`;
+}
+
 function TaskForm(){
     const dispatch = useDispatch();
-
-    function getDate() {
-        const today = new Date();
-        const month = today.getMonth() + 1;
-        const year = today.getFullYear();
-        const date = today.getDate();
-
-        return `${month}/${date}/${year}`;
-      }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -60,7 +60,7 @@ function TaskForm(){
                         autoComplete="taskDescription"
                         autoFocus
                     />
-                    <Button variant="contained" type="submit" alt="Add Task">{<AddIcon />}</Button>
+                    <Button variant="contained" type="submit" alt="Add_Task">{<AddIcon />}</Button>
                 </form>
             </div>
             <div className="sortOptions">
@@ -70,5 +70,7 @@ function TaskForm(){
         </>
     );
 }
+
+export { getDate };
 
 export default TaskForm;

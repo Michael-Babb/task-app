@@ -6,6 +6,7 @@ import Timer from '../timer/timer';
 import "./task-list.css";
 
 function TaskList({listOfTasks}){
+    
     return (
         <>
             <div id="taskOptions">
@@ -19,12 +20,13 @@ function TaskList({listOfTasks}){
                 <div className="taskList">
                     <ul className="tasks">
                         {
-                            listOfTasks.map((task, index) => (
+                            listOfTasks.length > 0 ? listOfTasks.map((task, index) => (
                                 <Task  
                                     key={index}
                                     index={index}
+                                    task={task}
                                 />
-                            ))
+                            )) : <span></span>
                         }
                     </ul>
                 </div>

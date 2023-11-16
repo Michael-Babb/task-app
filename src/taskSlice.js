@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+const preloadedData = {
   value: [
     {           
         "title":"Task 1",        
@@ -35,7 +35,7 @@ const initialState = {
 
 export const taskSlice = createSlice({
   name: 'taskData',
-  initialState,
+  initialState: preloadedData,
   reducers: {
     addTask: (state, action) => {
       state.value.push(action.payload);
@@ -80,6 +80,10 @@ export const taskSlice = createSlice({
   },
 })
 
-export const { addTask, deleteTask, toggleStatus, makeEditable, updateTaskTitle, updateTaskDescription, sortTasksByStatus, sortTasksByCreationDate} = taskSlice.actions
+export const { addTask, deleteTask, toggleStatus, makeEditable,
+   updateTaskTitle, updateTaskDescription, sortTasksByStatus,
+    sortTasksByCreationDate} = taskSlice.actions;
 
-export default taskSlice.reducer
+export const currentTaskData = (state) => state?.taskData?.value;
+
+export default taskSlice.reducer;

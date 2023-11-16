@@ -9,16 +9,16 @@ import EditIcon from '@mui/icons-material/Edit';
 import SaveIcon from '@mui/icons-material/Save';
 import TextField from '@mui/material/TextField';
 
-import { deleteTask, toggleStatus, makeEditable, updateTaskTitle, updateTaskDescription } from '../taskSlice';
+import { deleteTask, toggleStatus, makeEditable, updateTaskTitle, updateTaskDescription  } from '../taskSlice';
 import './task.css';
 
-function Task({index}){
+
+
+function Task({index, task}){
     const dispatch = useDispatch();
-    const individualTaskData = useSelector(state => state.taskData.value);
     let titleHolder = "";
     let descriptionHolder = "";
-    let statusIcon = "";
-
+    
     const handleTitleChange = (e) => {
         titleHolder = e.target.value;
     }
@@ -26,27 +26,21 @@ function Task({index}){
     const handleDescriptionChange = (e) => {
        descriptionHolder = e.target.value;
     }
-
-    if(individualTaskData[index].status){
-        statusIcon = <AutorenewIcon />;
-    } else {
-        statusIcon = <TaskAltIcon />;
-    }
    
     return (
-        <li key={index} className={`individualTask ${individualTaskData[index].status ? "completeTask" : "pendingTask"}`}>
-            <div class="container">
-                <p className="taskTitle">{individualTaskData[index].title}</p>
-                <p className="taskDescription"><b>Description:</b> {individualTaskData[index].description}</p>
-                <p className='taskCreationDate'><b>Creation Date:</b> {individualTaskData[index].creationDate}</p>
-                <p className='taskStatus'><b>Status:</b> {`${individualTaskData[index].status ? "Complete" : "Pending"}`}</p>
-                <div className={`updateTaskData ${individualTaskData[index].makeEditable ? "editTask" : "pendingTask"}`}>
+        <li key={index} className={`individualTask ${task.status ? "completeTask" : "pendingTask"}`}>
+            <div className="container">
+                <p className="taskTitle">{task.title}</p>
+                <p className="taskDescription"><b>Description:</b> {task.description}</p>
+                <p className='taskCreationDate'><b>Creation Date:</b> {task.creationDate}</p>
+                <p className='taskStatus'><b>Status:</b> {`${task.status ? "Complete" : "Pending"}`}</p>
+                <div className={`updateTaskData ${task.makeEditable ? "editTask" : "pendingTask"}`}>
                     <div className='updateTaskTitle'>
                         <TextField
                             margin="normal"
                             required
                             fullWidth
-                            id="updateTaskName"
+                            className="updateTaskName"
                             label="New Title"
                             name="updateTaskName"
                             autoComplete="updateTaskName"
@@ -60,7 +54,7 @@ function Task({index}){
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="updateTaskDescription"
+                                className="updateTaskDescription"
                                 label="New Description"
                                 name="updateTaskDescription"
                                 autoComplete="updateTaskDescription"
@@ -71,9 +65,9 @@ function Task({index}){
                     </div>
                 </div>
             </div>
-            <div class="taskButtons">
+            <div className="taskButtons">
                 <Button variant="contained" alt="Edit Task" onClick={() => dispatch(makeEditable(index))}>{<EditIcon />}</Button>
-                <Button variant="contained" alt="Toggle Status" onClick={() => dispatch(toggleStatus(index))}>{statusIcon}</Button>
+                <Button variant="contained" alt="Toggle Status" onClick={() => dispatch(toggleStatus(index))}>{task.status ? <AutorenewIcon /> : <TaskAltIcon />}</Button>
                 <Button variant="contained" alt="Delete Task" onClick={() => dispatch(deleteTask(index))}>{<DeleteIcon />}</Button>
             </div>
         </li>
