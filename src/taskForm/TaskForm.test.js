@@ -15,13 +15,6 @@ beforeEach(() => {
     );
 });
 
-test('Checks to see if the Sort By buttons have rendered', () => {
-    const sortByStatus = screen.getByText('Sort By Status');
-    const sortByCreationDate = screen.getByText('Sort By Creation Date');
-    expect(sortByStatus).toBeInTheDocument();
-    expect(sortByCreationDate).toBeInTheDocument();
-});
-
 test('Check to see if task title input has rendered', () => {
     const taskTitleInput = screen.getByText('Title');
     const descriptionInput = screen.getByText('Description');

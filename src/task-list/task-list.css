@@ -43,3 +43,58 @@
 .tasks li .container{
     padding-left : 10px;
 }
+
+.sortOptions button{
+    padding-top : 5px;
+    padding-bottom : 5px;
+    margin-bottom : 4px;
+}
+
+.sortOptions {
+    height : 50px;
+    background-color : #dbe9ff;
+    margin-top : 25px;
+    padding : 10px;
+    border-radius : 10px;
+    display : flex;
+}
+
+.sortOptions button {
+    margin-left : 10px;
+    margin-top : 5px;
+    flex : 1;
+}
+.addTaskBtnContainer{
+    padding-bottom : 10px;
+}
+
+@media (max-width: 999px){
+    #taskOptions {
+        width : 90%;
+        margin : auto;
+        margin-top : 50px;
+    }
+    #taskHeader {
+        display: block;
+        margin: auto;
+        width: 90%;
+    }
+    .sortOptions {
+        width : 90%;
+        margin : auto;
+        margin-top : 25px;
+    }
+    .sortOptions button {
+        flex : 0.5;
+        margin : 5px;
+        overflow:visible;
+        padding : 15px;
+    }
+
+    @media (max-width: 554px){
+        .sortOptions button {
+            font-size: 0.75em;
+        }
+
+    }
+}

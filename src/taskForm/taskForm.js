@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import TextField from '@mui/material/TextField';
 
-import { addTask, sortTasksByCreationDate, sortTasksByStatus } from '../taskSlice';
+import { addTask } from '../taskSlice';
 import './taskForm.css'
 
 function getDate() {
@@ -60,12 +60,8 @@ function TaskForm(){
                         autoComplete="taskDescription"
                         autoFocus
                     />
-                    <Button variant="contained" type="submit" alt="Add_Task">{<AddIcon />}</Button>
+                    <div className="addTaskBtnContainer"><Button variant="contained" type="submit" alt="Add_Task">{<AddIcon />}</Button></div>
                 </form>
-            </div>
-            <div className="sortOptions">
-                <Button variant="contained" type="button" alt="Sort Task By Status" onClick={() => dispatch(sortTasksByStatus({property: "status", ascending: true}))}>Sort By Status</Button>
-                <Button variant="contained" type="button" alt="Sort Task By Creation Date" onClick={() => dispatch(sortTasksByCreationDate({property: "creationDate", ascending: false}))}>Sort By Creation Date</Button>
             </div>
         </>
     );

@@ -2,7 +2,7 @@
     width : 100%;
 }
 
-.taskForm button, .sortOptions button{
+.taskForm button{
     padding-top : 5px;
     padding-bottom : 5px;
     margin-bottom : 4px;
@@ -10,33 +10,18 @@
 
 .taskForm button {
     width : 150px;
-    margin-left : 120px;
+    margin : auto;
     margin-top : 10px;
+    display : block;
 
 }
 
 .taskForm div {
-    width : 300px;
+    max-width : 500px;
     display : block;
     color : #FFFFFF; 
     margin : auto;
     margin-bottom : 15px;
-}
-
-.sortOptions {
-    width : 100%;
-    height : 50px;
-    background-color : #dbe9ff;
-    margin-top : 10px;
-    padding-top : 10px;
-    background-color : #292929;
-    border-bottom-left-radius : 10px;
-    border-bottom-right-radius : 10px;
-}
-
-.sortOptions button {
-    margin-left : 10px;
-    margin-top : 5px;
 }
 
 @media (max-width : 617px){
@@ -46,8 +31,21 @@
 }
 
 @media (max-width : 999px){
-    #taskHeader {
-        display : block!important;
-        margin : auto;
+    .taskForm button {
+        margin: auto;
+        display : block;
     }
 }
+@media (max-width : 700px){
+    .taskForm div {
+        max-width : 275px;
+    }
+}
+
+@media (min-width : 1000px){
+    .taskForm div {
+        max-width : 300px;
+    }
+}
+
+

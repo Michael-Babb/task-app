@@ -57,3 +57,10 @@ test('Checks if multiple tasks have been generated', () =>{
   const taskElements = screen.getAllByText('Description:');
   expect(taskElements.length).toBe(4);
 });
+
+test('Checks to see if the Sort By buttons have rendered', () => {
+  const sortByStatus = screen.getByText('Sort By Status');
+  const sortByCreationDate = screen.getByText('Sort By Creation Date');
+  expect(sortByStatus).toBeInTheDocument();
+  expect(sortByCreationDate).toBeInTheDocument();
+});
