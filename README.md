@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Although Create React App is no longer the recommened method for creating new apps as per the documentation. I wanted to first attempt to create a react app without any external framework to guide the development.
 ## Available Scripts
 
 In the project directory, you can run:
