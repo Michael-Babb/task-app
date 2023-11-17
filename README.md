@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Task App Info
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,6 +7,8 @@ This project is a version of a coding challange that I had completed. I have sin
 Although Create React App is no longer the recommened method for creating new apps as per the documentation. I wanted to first attempt to create a react app without any external framework to guide the development.
 
 I have also left a few premade tasks for display purposes. Tasks can be removed and app will still operate as designed
+
+This project can be viewed [live on Vercel](https://task-app-one-kappa.vercel.app/)
 
 ## Available Scripts
 
