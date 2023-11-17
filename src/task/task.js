@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -12,13 +12,11 @@ import TextField from '@mui/material/TextField';
 import { deleteTask, toggleStatus, makeEditable, updateTaskTitle, updateTaskDescription  } from '../taskSlice';
 import './task.css';
 
-
-
 function Task({index, task}){
     const dispatch = useDispatch();
     let titleHolder = "";
     let descriptionHolder = "";
-    
+
     const handleTitleChange = (e) => {
         titleHolder = e.target.value;
     }
@@ -26,7 +24,7 @@ function Task({index, task}){
     const handleDescriptionChange = (e) => {
        descriptionHolder = e.target.value;
     }
-   
+
     return (
         <li key={index} className={`individualTask ${task.status ? "completeTask" : "pendingTask"}`}>
             <div className="container">
@@ -66,8 +64,8 @@ function Task({index, task}){
                 </div>
             </div>
             <div className="taskButtons">
-                <Button variant="contained" alt="Edit Task" onClick={() => dispatch(makeEditable(index))}>{<EditIcon />}</Button>
-                <Button variant="contained" alt="Toggle Status" onClick={() => dispatch(toggleStatus(index))}>{task.status ? <AutorenewIcon /> : <TaskAltIcon />}</Button>
+                <Button variant="contained" alt="Edit Task" disabled={task.status ? true : false} onClick={() => dispatch(makeEditable(index))}>{<EditIcon />}</Button>
+                <Button variant="contained" alt="Toggle Status"  disabled={task.makeEditable ? true : false}onClick={() => dispatch(toggleStatus(index))}>{task.status ? <AutorenewIcon /> : <TaskAltIcon />}</Button>
                 <Button variant="contained" alt="Delete Task" onClick={() => dispatch(deleteTask(index))}>{<DeleteIcon />}</Button>
             </div>
         </li>
