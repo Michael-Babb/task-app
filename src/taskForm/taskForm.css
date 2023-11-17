@@ -2,13 +2,10 @@
     width : 100%;
 }
 
-.taskForm button{
+.taskForm button {
     padding-top : 5px;
     padding-bottom : 5px;
     margin-bottom : 4px;
-}
-
-.taskForm button {
     width : 150px;
     margin : auto;
     margin-top : 10px;
@@ -19,7 +16,7 @@
 .taskForm div {
     max-width : 500px;
     display : block;
-    color : #FFFFFF; 
+    color : #000000; 
     margin : auto;
     margin-bottom : 15px;
 }
